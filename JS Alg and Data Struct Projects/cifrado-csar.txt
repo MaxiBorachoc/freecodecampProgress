@@ -1,0 +1,22 @@
+function rot13(str) {
+   const alfa = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  str = str.split("")
+  let newStr = str.map((element)=>{
+    let index = alfa.indexOf(element);
+    index+=13
+    if(index>25){
+      index = index-26
+    }
+    if(element===" "){
+      return " "
+    }else if(alfa.includes(element)){
+      element = alfa[index]
+    }
+      
+    return element
+    
+  })
+  return newStr.join("");
+}
+
+console.log(rot13("SERR PBQR PNZC!"));

@@ -1,0 +1,11 @@
+function palindrome(str) {
+  let reg = /[^A-Za-z0-9]/g
+  str = str.toLowerCase().replace(reg, '');
+  let newStr = str.split("").reverse().join("")
+  if(str === newStr){
+    return true
+  }else return false;
+  
+}
+
+console.log(palindrome("race car")); 
